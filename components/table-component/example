@@ -1,5 +1,3 @@
-
-
 new gridjs.Grid({
 columns: ["Key Functional Requirements", "Details / Rationale"],
   data: [

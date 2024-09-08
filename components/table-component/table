@@ -8,7 +8,7 @@ new gridjs.Grid({
     ["Ease of Use:", "The device must be user-friendly for both patients and healthcare providers, with intuitive controls and minimal setup required "],
     ['Safety Features','Since the device will emit light directly into patients’ eyes. The device must not exceed certain intensity safety levels'],
   ],
-}).render(document.getElementById("table-1"));
+}).render(document.getElementById("table-2"));
 
 class TableComponent extends HTMLElement {
   static get observedAttributes() {
@@ -50,4 +50,4 @@ class TableComponent extends HTMLElement {
   }
 }
 
-customElements.define("table-component", TableComponent);
+customElements.define("table-component2", TableComponent);

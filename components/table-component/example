@@ -1,4 +1,4 @@
-new gridjs.Grid({
+const grid = new Grid({
 columns: ["Key Functional Requirements", "Details / Rationale"],
   data: [
     ["Controllable and known light intensities", "The device must provide controlled and variable light intensities to assess the eye’s response and discomfort levels at different intensities. This will help determine the threshold at which light triggers photophobia."],

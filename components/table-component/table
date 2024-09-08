@@ -1,3 +1,9 @@
+<table-component subtitle="Table 3: Key Functional Requirements">
+  <div id="table-2"></div>
+</table-component>
+
+
+
 new gridjs.Grid({
   columns: ["Key Functional Requirements", "Details / Rationale"],
   data: [

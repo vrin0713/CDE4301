@@ -1,0 +1,53 @@
+new gridjs.Grid({
+  columns: ["Stakeholder", "Stakeholder Insights, Need Statement"],
+  data: [
+    ["Retina & Cornea Specialist", "There are no standardized clinical methods to quantify photophobia, making it inherently subjective. The lack of reliable tools means we often rely on patient history, which may not always be accurate.", "Need for a clinical tool that eliminates subjectivity and captures accurate, real-time photophobia data, streamlining diagnosis and reducing patient-reported inaccuracies."],
+    ["Retina Specialist", "‘Understanding light sensitivity helps in making accurate diagnoses, which is crucial for meaningful genetic testing and management decisions.’", "Need for a device that integrates light sensitivity data into genetic testing and diagnostic workflows, enabling more accurate predictions of retinal disease progression and treatment efficacy."],
+    ["Retina Specialist", "'I am open to integrating new diagnostic tools into my practice, and factors such as reliability, ease of use would influence my decision to adopt a new technology.’ ", "Need for a user-friendly, cost-effective, and reliable photophobia assessment tool that can be easily integrated into existing clinical workflows and adopted widely in retinal care."],
+    ["Cornea Specialist", "'I see photophobia as a symptom in 75% of the patients I consult, it is quite common. It can also differentiate between diagnoses, such as neuropathic corneal pain and dry eye patients.'", "Need for a reliable and widely applicable diagnostic tool that can be used easily in patients with varying conditions, given the high prevalence of photophobia." ],
+    ['Cornea Specialist', "'Implementing more quantitative measurements would enhance diagnostic accuracy and facilitate the tracking of disease progression in response to treatment.'", 'Need for a quantitative, data-driven system to measure the severity of photophobia and track changes over time, enabling more effective monitoring of treatment outcomes and disease progression.'],
+    ['Cornea Specialist', "'The product has to be non-invasive, accurate, and time-efficient.'","Need for a non-invasive, accurate, and time-efficient device that is easy to use in clinical settings and minimizes discomfort for patients." ], 
+  ],
+}).render(document.getElementById("needs"));
+
+class TableComponent extends HTMLElement {
+  static get observedAttributes() {
+    return ["subtitle"];
+  }
+
+  constructor() {
+    super();
+    this.attachShadow({ mode: "open" });
+  }
+
+  connectedCallback() {
+    this.render();
+  }
+
+  attributeChangedCallback(name, _, newValue) {
+    this[name] = newValue;
+  }
+
+  render() {
+    const div = document.createElement("div");
+    div.innerHTML = `
+    <slot></slot>
+    <sub>${this.subtitle}</sub>
+    <style>
+      :host {
+        display: block;
+        text-align: center;
+      }
+
+      sub {
+        font-size: 1rem;
+        font-style: italic;
+      }
+    </style>
+  `;
+
+    this.shadowRoot.appendChild(div);
+  }
+}
+
+customElements.define("table-component", TableComponent);

@@ -1,5 +1,5 @@
 new gridjs.Grid({
-  columns: ["Stakeholder", "Stakeholder Insights, Need Statement"],
+  columns: ["Stakeholder", "Stakeholder Insights", "Need Statement"],
   data: [
     ["Retina & Cornea Specialist", "There are no standardized clinical methods to quantify photophobia, making it inherently subjective. The lack of reliable tools means we often rely on patient history, which may not always be accurate.", "Need for a clinical tool that eliminates subjectivity and captures accurate, real-time photophobia data, streamlining diagnosis and reducing patient-reported inaccuracies."],
     ["Retina Specialist", "‘Understanding light sensitivity helps in making accurate diagnoses, which is crucial for meaningful genetic testing and management decisions.’", "Need for a device that integrates light sensitivity data into genetic testing and diagnostic workflows, enabling more accurate predictions of retinal disease progression and treatment efficacy."],
@@ -50,4 +50,4 @@ class TableComponent extends HTMLElement {
   }
 }
 
-customElements.define("table-component", TableComponent);
+customElements.define("table-component",TableComponent);
